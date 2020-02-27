@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    </head>
+  <body>
+    <div><br>
+      <h1>Send Email</h1><br>
+      <form action="/send-email" method="POST">
+        <div class="row">
+          <div>
+            <label for="to">To:</label>
+            <input type="email" class="form-control" name="to">
+          </div>
+        
+          <div >
+            <label for="subject">Subject:</label>
+            <input type="text" class="form-control" name="subject">
+          </div>
+        
+          <div >
+             <label for="body">message</label>
+             <textarea cols="5" rows="5"name="body">write text</textarea>
+          </div>
+        
+          <div >
+            <button type="submit" class="btn btn-success">Send</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
