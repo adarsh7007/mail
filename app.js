@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express();
+
 const cron = require('node-cron');
 const smtpPool = require('nodemailer-smtp-pool')
 const nodeMailer = require('nodemailer'),
@@ -19,17 +20,17 @@ app.post('/send-email', (req, res) => {
    //  port: 587,
    //  secure: false, // true for 465, false for other ports
     auth: {
-           user: 'adarshrastogi7007@gmail.com',
-           pass: 'adarsh7007'
-      }
+      user: process.env.GMAIL_EMAIL, // generated ethereal user
+      pass: process.env.GMAIL_PASS // generated ethereal password
+    }
    }));
 
    let mailOptions = {
       from: 'adarsrastogi7007@gmail.com',
       to: req.body.to, // receiver Email
       subject: req.body.subject, // Subject line
-      body: req.body.body, // plain text body
-      html: '<b>Nodemailer is Working</b>' // html body
+     // mail: req.body.mail, // plain text body
+      html: req.body.mail, //'<b>Nodemailer is Working</b>' // html body
    };
    cron.schedule('* * * * *', () => {
    transporter.sendMail(mailOptions, (error, info) => {
