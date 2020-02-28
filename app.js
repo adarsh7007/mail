@@ -20,8 +20,8 @@ app.post('/send-email', (req, res) => {
    //  port: 587,
    //  secure: false, // true for 465, false for other ports
     auth: {
-      user: process.env.GMAIL_EMAIL, // generated ethereal user
-      pass: process.env.GMAIL_PASS // generated ethereal password
+      user: 'adarshrastogi7007@gmail.com', // generated ethereal user
+      pass: 'adarsh7007' // generated ethereal password
     }
    }));
 
